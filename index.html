@@ -1,8 +1,26 @@
 <html>
     <head>
         <title>Cainance</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <script src="index.js">register();</script>
     </head>
     <body>
-        
+
+        <div id="lhs">
+            <ul class="lhs">
+                <li class="lhs"><a href="#" onclick="defrag(null);">Index</a></li>
+                <li class="lhs"><a href="#play" onclick="defrag(play);">Play</a></li>
+            </ul>
+        </div>
+
+        <div id="rhs">
+            <div id="play" class="rhs">
+                <canvas id="game">
+                    
+                </canvas>
+            </div>
+            <div class="rhs"></div>
+        </div>
     </body>
 </html>
