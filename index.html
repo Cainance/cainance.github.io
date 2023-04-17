@@ -2,25 +2,30 @@
     <head>
         <title>Cainance</title>
         <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="./grain.css">
         <link rel="icon" type="image/x-icon" href="./favicon.ico?">
-        <script src="./index.js">register();</script>
+        <script src="./index.js"></script>
+        <script src="./lib/WebSocket.js"></script>
+        <script src="./spirit.js"></script>
     </head>
     <body>
+        <div id="grain"></div>
 
         <div id="lhs">
             <ul class="lhs">
-                <li class="lhs"><a href="#" onclick="defrag(null);">Index</a></li>
-                <li class="lhs"><a href="#play" onclick="defrag(play);">Play</a></li>
+                <li class="lhs"><a href="#" onclick="goto();">Index</a></li>
+                <li class="lhs"><a href="#play" onclick="goto(load);">Play</a></li>
             </ul>
         </div>
 
         <div id="rhs">
-            <div id="play" class="rhs">
-                <canvas id="game">
+            <div id="play" class="rhs" style="margin: 0;">
+                <canvas id="game" style="background-color: var(--efblack); width: 640px; height: 480px";>
                     
                 </canvas>
             </div>
             <div class="rhs"></div>
         </div>
+
     </body>
 </html>
