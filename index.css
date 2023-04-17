@@ -5,65 +5,75 @@
     --efgray: #1B1B1BFF;
 }
 
-* {
-    font: 11px "Verdana", sans-serif;
-    color: var(--efred);
-}
-
 body {
-    margin: 0px;
+    /* margin: 8px; */
     background-color: var(--efgray);
+    color: var(--efred);
+    font-size: 24px;
 }
 
-body div {
-    margin: 8px;
-    color: var(--efwhite);
-}
-
-/* Style */
-#lhs > ul.lhs {
+/* <ul> */
+div#nav > ul {
+    position: relative;
     margin: 0px;
     padding: 0px;
     list-style: none;
     font-size: 0;
 }
-ul.lhs > li.lhs {
+
+/* <li> */
+div#nav > ul > li {
     display: inline-block;
-    margin: 0px;
-    padding: 0px 8px 0px 0px;
-    font-size: medium;
+    width: 80px;
+    box-sizing: border-box;
+    font-size: 24px;
+    margin-left: 15px;
 }
-ul.lhs > li.lhs > a {
+div#nav > ul > li:first-child {
+    margin-left: 95px;
+}
+div#nav > ul > li:last-child {
+    position: absolute;
+    left: 0px;
+    margin-left: 0px;
+}
+
+/* <a> */
+div#nav > ul > li > a {
+    display: block;
+    text-align: center;
+    /* font-size: 16px; */
     color: var(--efwhite);
-    padding: 8px;
-    text-decoration: none;
-    display: block;
-    border: 1px var(--efwhite) solid;
-}
-ul.lhs > li.lhs > a:hover {
-    color: var(--efblack);
-    background-color: var(--efwhite);
-    border: 1px var(--efblack) solid;
-}
-
-/* Blocker */
-#lhs > li.lhs:target ~ li.lhs:last-child, #lhs > li.lhs.ex {
-    display: none;
-}
-#lhs > :last-child, #lhs > li.lhs:target {
-    display: block;
-}
-/* Blocker Tracker */
-#lhs {
-    border-color: var(--efred);
     background-color: var(--efblack);
+    border: solid 1px var(--efwhite);
+    text-decoration: none;
+}
+div#nav > ul > li > a,
+div#nav > ul > li:target ~ li:last-child > a {
+    color: var(--efwhite);
+    border-color: var(--efwhite);
+}
+div#nav > ul > li:last-child > a,
+div#nav > ul > li:target > a {
     color: var(--efred);
+    border-color: var(--efred);
 }
 
-/* Blockee */
-#rhs > .rhs:target ~ .rhs:last-child, #rhs > .rhs {
+
+/* <div> */
+div#nav > ul > li > div {
+    position: absolute;
+    margin-top: 15px;
+    left: 0px;
+    width: 640px;
+    height: 480px;
+    background-color: black;
+}
+div#nav > ul > li > div,
+div#nav > ul > li:target ~ li:last-child > div {
     display: none;
 }
-#rhs > :last-child, #rhs > .rhs:target {
+div#nav > ul > li:last-child > div,
+div#nav > ul > li:target > div {
     display: block;
 }
