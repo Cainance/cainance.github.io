@@ -5,6 +5,11 @@
     --efgray: #1B1B1BFF;
 }
 
+* {
+    font: 11px "Verdana", sans-serif;
+    color: var(--efred);
+}
+
 body {
     margin: 0px;
     background-color: var(--efgray);
@@ -47,6 +52,12 @@ ul.lhs > li.lhs > a:hover {
 }
 #lhs > :last-child, #lhs > li.lhs:target {
     display: block;
+}
+/* Blocker Tracker */
+#lhs {
+    border-color: var(--efred);
+    background-color: var(--efblack);
+    color: var(--efred);
 }
 
 /* Blockee */

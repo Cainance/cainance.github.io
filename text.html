@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./test.css">
+    </head>
+    <body>
+        
+        <script>
+            function goto(callback) {
+                setTimeout(function() {
+                    window.history.replaceState(null, null, window.location.pathname);
+                }, 0);
+                if (callback) {
+                    callback();
+                }
+            }
+        </script>
+
+        <div id="nav">
+            <ul>
+                <li id="A">
+                    <a href="#A" onclick="goto(console.log('A'))">A</a>
+                    <div>
+                        Index
+                    </div>
+                </li>
+                <li id="B">
+                    <a href="#B" onclick="goto(console.log('B'))">B</a>
+                    <div>
+                        Xedni
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </body>
+</html>

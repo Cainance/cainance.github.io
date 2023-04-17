@@ -1,0 +1,86 @@
+html {
+    background-color: dimgray;
+}
+
+#nav {
+    background-color: gray;
+}
+
+/* #nav ul li:target a {
+    pointer-events: none;
+    color: red;
+} */
+
+ #nav ul li div {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    width: 640px;
+    height: 480px;
+}
+/* 
+#nav ul li:target div {
+    color: green;
+    display: block;
+} */
+
+
+/* 
+#nav ul > li:target ~ li:last-child, #nav ul > li {
+    color: red;
+}
+#nav ul > li:last-child, 
+#nav ul > li:target {
+    color: yellow;
+} */
+
+
+
+/* #nav ul li:target div ~ :last-child div {
+    color: yellow;
+} */
+
+/* #rhs > .rhs:target ~ .rhs:last-child, #rhs > .rhs {
+    display: none;
+}
+#rhs > :last-child, #rhs > .rhs:target {
+    display: block;
+} */
+
+
+
+/* #nav ul > li:target div ~ li:last-child div, #nav ul > li div {
+    display: none;
+}
+#nav ul > li:last-child div, #nav ul > li:target div {
+    display: block;
+} */
+
+
+
+div#nav > ul > li > div {
+    display: none;
+}
+div#nav > ul > li:target > div {
+    display: block;
+}
+
+
+
+
+
+/* #nav ul > li > div:not(:first-child) {
+    display: none;
+  }
+  
+  #nav ul > li:target > div {
+    display: block;
+  }
+  
+  #nav ul > li:not(:target):first-child > div:first-child {
+    display: block;
+  }
+  
+  #nav ul > li:not(:first-child):not(:target) + li:first-child > div:first-child {
+    display: none;
+  } */
