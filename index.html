@@ -1,12 +1,13 @@
 <html>
     <head>
         <title>Cainance</title>
-        <link rel="stylesheet" href="./index.css">
-        <link rel="stylesheet" href="./grain.css">
-        <link rel="icon" type="image/x-icon" href="./favicon.ico?">
-        <script src="./index.js"></script>
-        <script src="./lib/WebSocket.js"></script>
-        <script src="./spirit.js"></script>
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/grain.css">
+        <link rel="icon" type="image/x-icon" href="./ico/favicon.ico?">
+        <script src="./js/index.js"></script>
+        <script src="./js/libjs.js"></script>
+        <script src="./js/WebSocket.js"></script>
+        <script src="./js/spirit.js"></script>
     </head>
     <body>
         <div id="grain"></div>
@@ -26,26 +27,31 @@
                     <a href="#About">About</a>
                     <div style="overflow: auto">
                         <h1 style="margin: 8px;">About</h1>
+                        <br>
                         <p style="margin: 8px;">
-                            This is a work-in-progress, minimalistic, MMORPG, built on top 
-                            of the most bleeding edge technology available. The game is 
-                            being written in C, without any use of standard libraries 
-                            or external dependencies. I'm restricting myself to C89, 
-                            without any exceptions. The only thing being used as of this date 
-                            is the stdarg.h implementation, provided by the clang compiler,
-                            but this will hopefully not be the case for long. The game is
-                            utilizing bleeding edge technology such as WebRTC for its
-                            network implementation. In order to establish a connection,
-                            the game will use WebSockets, as implemented by Javascript, to
-                            securely establish a connection to initiate the WebRTC connection.
-                            The WebSocket Server is written with the same quality as everything else,
-                            from scratch, C89, Windows and Linux support, no dependencies. Same
-                            goes for the WebRTC Server. Clang is used for compilation. WebGL 
-                            will be used for rendering, as this will allow the game to use the
-                            full potential of the GPU. The goal of the project is to showcase 
-                            my capabilities, whilst at the same time challenging myself. 
-                            The game may or may not be successful, but I'll do everything 
-                            in my power to ensure absolute perfection. 
+                            A work-in-progress,
+                            minimalistic,
+                            yet all-encompassing,
+                            browser-based,
+                            pixel-art art-style MMORPG.
+                            <br>
+                            <br>
+                            Glue: WebSocket, WebGL, WebRTC.
+                            <br>
+                            <br>
+                            Language: C89, strict conformity without exceptions.
+                            <br>
+                            <br>
+                            Ruleset: no stdlib, no dependenices (exception: stdarg.h macros provided by compiler for use in custom stdarg.h file.)
+                            <br>
+                            <br>
+                            Tools: Standalone clang.exe compiler w/ wasm-ld.exe linker for .wasm output.
+                            <br>
+                            <br>
+                            WebSocketServer: Custom, C89, Windows/Linux, Berkeley sockets.
+                            <br>
+                            <br>
+                            WebRTCServer: Custom, C89, Windows/Linux, Berkeley sockets.
                         </p>
                     </div>
                 </li>
@@ -53,6 +59,19 @@
                     <a href="#Index">Index</a>
                     <div>
                         <h1 style="margin: 8px;">Index</h1>
+                        <br>
+                        <p style="margin: 8px;">
+                            Click [Play] and check console for output.
+                            <br>
+                            <br>
+                            How? Javascript calls out into C implementation (compiled into wasm) 
+                            which contains, essentially, the entire client-side implementation. 
+                            The C implementation communicates with Javascript through 
+                            imported Javascript glue functions.
+                            <br>
+                            <br>
+                            Note that everything is in a work-in-progress state.
+                        </p>
                     </div>
                 </li>
             </ul>

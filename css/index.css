@@ -67,7 +67,8 @@ div#nav > ul > li > div {
     left: 0px;
     width: 640px;
     height: 480px;
-    background-color: black;
+    background-color: var(--efblack);
+    color: var(--efwhite);
 }
 div#nav > ul > li > div,
 div#nav > ul > li:target ~ li:last-child > div {

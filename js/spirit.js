@@ -17,13 +17,21 @@ const importObject = Object.freeze({
         /* WebSocket */
         WebSocketCreate: WEB_SOCKET.Create,
         WebSocketDestroy: WEB_SOCKET.Destroy,
-        WebSocketGetBinaryType: WEB_SOCKET.GetBinaryType
+        WebSocketGetBinaryType: WEB_SOCKET.GetBinaryType,
+        WebSocketSetBinaryType: WEB_SOCKET.SetBinaryType,
+        WebSocketGetBufferedAmount: WEB_SOCKET.GetBufferedAmount,
+        WebSocketGetExtensions: WEB_SOCKET.GetExtensions,
+        WebSocketGetProtocol: WEB_SOCKET.GetProtocol,
+        WebSocketGetReadyState: WEB_SOCKET.GetReadyState,
+        WebSocketGetURL: WEB_SOCKET.GetURL,
+        WebSocketClose: WEB_SOCKET.Close,
+        WebSocketSend: WEB_SOCKET.Send
     }
 });
 
 function load() {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "index.wasm");
+    xhr.open("GET", "../wasm/index.wasm");
     xhr.responseType = "arraybuffer";
 
     xhr.onload = () => {

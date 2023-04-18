@@ -3,7 +3,7 @@
     margin: 0;
 }
 #grain:after {
-    background-image: url(./grain.jpg);
+    background-image: url(../jpg/grain.jpg);
     content: "";
     height: 300%;
     left: -50%;
