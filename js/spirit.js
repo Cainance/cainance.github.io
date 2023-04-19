@@ -31,7 +31,7 @@ const importObject = Object.freeze({
 
 function load() {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "../wasm/index.wasm");
+    xhr.open("GET", "../../Spirit/bin/index.wasm");
     xhr.responseType = "arraybuffer";
 
     xhr.onload = () => {

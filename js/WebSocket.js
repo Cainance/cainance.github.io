@@ -1,9 +1,28 @@
 const WEB_SOCKET = Object.freeze({
     wss: new Array(0),
     Create: function(me, url) {
+        let str;
         let ws;
 
-        ws = new WebSocket("ws://127.0.0.1:12345");
+        str = libjs.ToString(url);
+
+        ws = new WebSocket(str);
+
+        ws.onclose = (event) => {
+            instance.exports.WebSocketOnClose(me, event);
+        };
+
+        ws.onerror = (event) => {
+            instance.exports.WebSocketOnError(me, event);
+        };
+
+        ws.onmessage = (event) => {
+            instance.exports.WebSocketOnMessage(me, event);
+        };
+
+        ws.onopen = (event) => {
+            instance.exports.WebSocketOnOpen(me, event);
+        };
 
         WEB_SOCKET.wss.push({ id: me, ws: ws });
 
@@ -11,6 +30,7 @@ const WEB_SOCKET = Object.freeze({
     },
     Destroy: function(me) {
         let inx;
+        let ws;
 
         inx = WEB_SOCKET.wss.findIndex(ws => ws.id == me);
 
@@ -18,7 +38,9 @@ const WEB_SOCKET = Object.freeze({
             return 0x01;
         }
 
-        WEB_SOCKET.wss.splice(inx, 0x01);
+        ws = WEB_SOCKET.wss.splice(inx, 0x01)[0x00];
+
+        ws.ws.close();
 
         return 0x00;
     },
@@ -166,10 +188,9 @@ const WEB_SOCKET = Object.freeze({
         if (inx == -0x01) {
             return 0x01;
         }
-
+        
         arr = new Uint8Array(instance.exports.memory.buffer, data, size);
-
-        WEB_SOCKET.wss[inx].ws.send(arr.buffer);
+        WEB_SOCKET.wss[inx].ws.send(new TextDecoder().decode(arr)); // arr.buffer);
 
         return 0x00;
     }
