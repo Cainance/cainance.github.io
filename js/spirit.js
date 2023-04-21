@@ -12,9 +12,13 @@ const importObject = Object.freeze({
     module: { },
     env: {
         memory: new WebAssembly.Memory({ initial: 256 }),
+        /********/
         /* libc */
+        /********/
         printfExtern: printf,
+        /*************/
         /* WebSocket */
+        /*************/
         WebSocketCreate: WEB_SOCKET.Create,
         WebSocketDestroy: WEB_SOCKET.Destroy,
         WebSocketGetBinaryType: WEB_SOCKET.GetBinaryType,
@@ -25,7 +29,13 @@ const importObject = Object.freeze({
         WebSocketGetReadyState: WEB_SOCKET.GetReadyState,
         WebSocketGetURL: WEB_SOCKET.GetURL,
         WebSocketClose: WEB_SOCKET.Close,
-        WebSocketSend: WEB_SOCKET.Send
+        WebSocketSend: WEB_SOCKET.Send,
+        /**********/
+        /* WebRTC */
+        /**********/
+        /* RTCPeerConnectionConfiguration */
+        RTCPeerConnectionConfigurationCreate: WEB_RTC.RTC_PEER_CONNECTION_CONFIGURATION.Create,
+        RTCPeerConnectionConfigurationDestroy: WEB_RTC.RTC_PEER_CONNECTION_CONFIGURATION.Destroy
     }
 });
 
