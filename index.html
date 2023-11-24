@@ -1,8 +1,40 @@
+<!DOCTYPE html>
 <html>
 <head>
-<title>404</title>
+	<meta charset="utf-8">
+	<title>Spirit</title>
+    <link rel="stylesheet" type="text/css" href="spirit.css">
 </head>
 <body>
-404
+    <div>
+        <canvas id="canvas" width="640" height="480" oncontextmenu="event.preventDefault()"></canvas>
+    </div>
+    <script type='text/javascript'>
+        var Module = {
+            preRun: [],
+            postRun: [],
+            print: (function() {
+                return function(text) {
+                    text = Array.prototype.slice.call(arguments).join(' ');
+                    console.log(text);
+                };
+            })(),
+            printErr: function(text) {
+                text = Array.prototype.slice.call(arguments).join(' ');
+                console.error(text);
+            },
+            canvas: (function() {
+                var canvas = document.getElementById('canvas');
+                //canvas.addEventListener("webglcontextlost", function(e) { alert('FIXME: WebGL context lost, please reload the page'); e.preventDefault(); }, false);
+                return canvas;
+            })(),
+            setStatus: function(text) { },
+            monitorRunDependencies: function(left) { },
+        };
+        window.onerror = function() {
+        console.log("onerror: " + event.message);
+    };
+    </script>
+    <script src="./spirit.js"></script>
 </body>
 </html>
